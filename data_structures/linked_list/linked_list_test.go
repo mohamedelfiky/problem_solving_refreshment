@@ -38,6 +38,16 @@ func TestPushFirst(t *testing.T) {
 	}
 }
 
+func TestSearch(t *testing.T) {
+	l := new(LinkedList)
+
+	l.Push(10)
+	l.Push(15)
+	l.Push(5)
+	assert.NotNil(t, l.Search(15))
+	assert.Nil(t, l.Search(11))
+}
+
 func TestInsert(t *testing.T) {
 	l := new(LinkedList)
 

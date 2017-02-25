@@ -30,6 +30,17 @@ func (l *LinkedList) Insert(afterMe *ListNode, value interface{}) *ListNode {
 	return node
 }
 
+func (l *LinkedList) Search(value interface{}) *ListNode {
+	current := &(l.head)
+	for *current != nil {
+		if (*current).value == value {
+			return *current
+		}
+		current = &((*current).next)
+	}
+	return nil
+}
+
 func (l *LinkedList) PushFirst(value interface{}) {
 	l.head = &ListNode{value: value, next: l.head}
 }
