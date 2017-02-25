@@ -31,12 +31,14 @@ func (l *LinkedList) Insert(afterMe *ListNode, value interface{}) *ListNode {
 }
 
 func (l *LinkedList) Search(value interface{}) *ListNode {
-	current := &(l.head)
-	for *current != nil {
-		if (*current).value == value {
-			return *current
+	if l.head != nil {
+		current := &(l.head)
+		for *current != nil {
+			if (*current).value == value {
+				return *current
+			}
+			current = &((*current).next)
 		}
-		current = &((*current).next)
 	}
 	return nil
 }
