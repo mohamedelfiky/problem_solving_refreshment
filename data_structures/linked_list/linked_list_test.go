@@ -37,3 +37,20 @@ func TestInsert(t *testing.T) {
 		}
 	}
 }
+
+func TestRemove(t *testing.T) {
+	l := new(LinkedList)
+
+	l.Push(1)
+	l.Push(5)
+	n2 := l.Push(10)
+	l.Push(15)
+	l.Remove(n2)
+	assert.Equal(t, l.head.value, 1, "they should be equal")
+	if assert.NotNil(t, l.head.next) {
+		assert.Equal(t, l.head.next.value, 5, "they should be equal")
+		if assert.NotNil(t, l.head.next.next) {
+			assert.Equal(t, l.head.next.next.value, 15, "they should be equal")
+		}
+	}
+}

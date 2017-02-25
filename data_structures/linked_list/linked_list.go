@@ -29,3 +29,16 @@ func (l *LinkedList) Insert(afterMe *ListNode, value interface{}) *ListNode {
 	afterMe.next = node
 	return node
 }
+
+func (l *LinkedList) Remove(item *ListNode) {
+	if l.head != nil {
+		current := &(l.head)
+		for *current != nil {
+			if (*current).next == item {
+				(*current).next = (*current).next.next
+				break
+			}
+			current = &((*current).next)
+		}
+	}
+}
