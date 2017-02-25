@@ -22,6 +22,22 @@ func TestPush(t *testing.T) {
 	}
 }
 
+func TestPushFirst(t *testing.T) {
+	l := new(LinkedList)
+
+	l.Push(10)
+	l.Push(15)
+	l.PushFirst(5)
+	assert.Equal(t, l.head.value, 5, "they should be equal")
+	if assert.NotNil(t, l.head.next) {
+		assert.Equal(t, 10, l.head.next.value, "they should be equal")
+
+		if assert.NotNil(t, l.head.next.next) {
+			assert.Equal(t, l.head.next.next.value, 15, "they should be equal")
+		}
+	}
+}
+
 func TestInsert(t *testing.T) {
 	l := new(LinkedList)
 
