@@ -7,7 +7,7 @@ type QueueItem struct {
 
 type Queue struct {
 	size       int
-	head, tail *QueueItem
+	head, rear *QueueItem
 }
 
 func (l *Queue) Push(value interface{}) *QueueItem {
@@ -16,10 +16,10 @@ func (l *Queue) Push(value interface{}) *QueueItem {
 		l.head = item
 		l.size = 1
 	} else {
-		l.tail.next = item
+		l.rear.next = item
 		l.size++
 	}
-	l.tail = item
+	l.rear = item
 	return item
 }
 
@@ -31,7 +31,7 @@ func (l *Queue) Pop() interface{} {
 		l.head = l.head.next
 		l.size--
 		if l.size == 0 {
-			l.tail = nil
+			l.rear = nil
 		}
 		return head.value
 	}
