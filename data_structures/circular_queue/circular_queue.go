@@ -1,6 +1,6 @@
 package circular_queue
 
-const MAX_SIZE int = 10
+const MAX_SIZE int = 3 // small for testing
 
 type CircularQueue struct {
 	queue             [MAX_SIZE]interface{}
@@ -23,7 +23,13 @@ func (l *CircularQueue) Push(value interface{}) {
 }
 
 func (l *CircularQueue) Pop() interface{} {
-	return 0
+	if !l.IsEmpty() {
+		front := l.front
+		l.front = (front + 1) % MAX_SIZE
+		l.size--
+		return l.queue[front]
+	}
+	return nil
 }
 
 func (l *CircularQueue) IsEmpty() bool {
