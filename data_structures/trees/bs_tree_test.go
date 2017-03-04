@@ -50,7 +50,7 @@ func TestInsert(t *testing.T) {
 func TestSearch(t *testing.T) {
 	tree := NewBSTree(5, "tree root")
 	tree.Insert(3, "1st level left")
-	tree.Insert(4, "1st level left")
+	tree.Insert(4, "1st level left right child")
 	tree.Insert(7, "1st level right")
 	exists, node := tree.Search(5)
 	assert.Equal(t, true, exists)
