@@ -1,6 +1,4 @@
 language: go
 sudo: false
-before_script:
-- bin/travis/setup
 script:
 - go test -v ./...
