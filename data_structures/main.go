@@ -3,11 +3,11 @@ package main
 import (
 	"fmt"
 
-	"github.com/mohamedelfiky/problem_solving_refreshment/data_structures/hash_map"
+	"github.com/mohamedelfiky/problem_solving_refreshment/data_structures/hashmap"
 )
 
 func main() {
-	l := hash_map.New()
+	l := hashmap.New()
 
 	l.Put("key1", "45678")
 	l.Put("key2", "4577")

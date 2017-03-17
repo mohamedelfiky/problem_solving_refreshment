@@ -1,4 +1,4 @@
-package hash_map
+package hashmap
 
 import "github.com/mohamedelfiky/problem_solving_refreshment/data_structures/linked_list"
 
